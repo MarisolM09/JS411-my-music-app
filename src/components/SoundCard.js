@@ -3,9 +3,9 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import Switch from "@mui/material/Switch";
 
-export default function CustomCard(props) {
+
+export default function SoundCard(props) {
   const { title, body } = props;
   
 
@@ -20,7 +20,7 @@ export default function CustomCard(props) {
         </div>
       </CardContent>
       <CardActions>
-        <Switch defaultChecked onChange={() => props.setState(!props.state)} />
+        {/* <Switch defaultChecked onChange={() => props.setState(!props.state)} /> */}
       </CardActions>
     </Card>
   );
