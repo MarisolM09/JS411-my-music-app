@@ -7,7 +7,6 @@ import Switch from "@mui/material/Switch";
 
 export default function CustomCard(props) {
   const { title, body } = props;
-  
 
   return (
     <Card sx={{ maxWidth: 275 }}>

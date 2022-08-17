@@ -11,7 +11,8 @@ import "./App.css";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isToggled, setIsToggled] = useState(false);
-  const [isMaxVolume, setIsMaxVolume] = useState(false);
+  const [isMaxVolume, setIsMaxVolume] = useState(30);
+  const [isQuality, setIsQuality] = useState(2);
 
   return (
     <main>
@@ -47,6 +48,8 @@ function App() {
               body="Is this application connected to the internet?"
             />
             <SoundCard
+              state={isQuality}
+              setState={setIsQuality}
               title="Sound Quality"
               body="Manually conrol the music quality in event of poor connection."
             />
@@ -56,6 +59,18 @@ function App() {
             <span>
               Your Application is offline. You won't be able to share or stream
               to other devices.{" "}
+            </span>
+          )}
+          {isMaxVolume >= 80 && (
+            <span>
+              Listening to music at a high volume could cause long-term hearing
+              loss.{" "}
+            </span>
+          )}
+          {isQuality < 2 && (
+            <span>
+              Listening to music at a high volume could cause long-term hearing
+              loss.{" "}
             </span>
           )}
         </section>

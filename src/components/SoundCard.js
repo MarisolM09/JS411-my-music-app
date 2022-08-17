@@ -7,6 +7,10 @@ import Typography from "@mui/material/Typography";
 export default function SoundCard(props) {
   const { title, body } = props;
 
+  const handleChange = (event) => {
+    props.setState(event.target.value);
+  };
+
   return (
     <Card sx={{ maxWidth: 275 }}>
       <CardContent>
@@ -17,10 +21,10 @@ export default function SoundCard(props) {
           <Typography variant="body2">{body}</Typography>
         </div>
         <div className="Drop-menu">
-          <select>
-            <option value="Low">Low</option>
-            <option value="Normal">Normal</option>
-            <option value="High">High</option>
+          <select value={props.state} onChange={handleChange}>
+            <option value={1}>Low</option>
+            <option value={2}>Normal</option>
+            <option value={3}>High</option>
           </select>
         </div>
       </CardContent>
